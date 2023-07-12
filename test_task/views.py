@@ -144,7 +144,7 @@ class delete_service_area(APIView):
 
 class polygons_with_point(APIView):
     """
-    Returns a list of polygons containing a point with a given long and lat
+    Returns a list of ServiceAreas containing a point with a given long and lat
     """
 
     @swagger_auto_schema(request_body=polygons_point_check_input_serializer,
