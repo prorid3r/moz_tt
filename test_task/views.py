@@ -144,11 +144,12 @@ class delete_service_area(APIView):
 
 class polygons_with_point(APIView):
     """
-    Returnsa list of polygons containing a point with a given long and lat
+    Returns a list of polygons containing a point with a given long and lat
     """
 
     @swagger_auto_schema(request_body=polygons_point_check_input_serializer,
-                         responses={'200': polygons_point_check_result_serializer(many=True), '400': 'HTTP_400_BAD_REQUEST'},
+                         responses={'200': polygons_point_check_result_serializer(many=True),
+                                    '400': 'HTTP_400_BAD_REQUEST'},
                          operation_id='Polygons by point search')
     def post(self, request):
         s = polygons_point_check_input_serializer(data=request.data)
