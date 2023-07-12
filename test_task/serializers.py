@@ -7,7 +7,7 @@ from pycountry import currencies as CURRENCIES
 class provider_serializer(serializers.ModelSerializer):
     class Meta:
         model = Provider
-        fields = ['name', 'email', 'phone_number', 'language', 'currency']
+        fields = ['name', 'email', 'phone_number', 'language', 'currency','id']
 
     def validate(self, data):
         """
@@ -23,7 +23,7 @@ class provider_serializer(serializers.ModelSerializer):
 class service_area_serializer(serializers.ModelSerializer):
     class Meta:
         model = ServiceArea
-        fields = ['name', 'price', 'provider', 'polygon']
+        fields = ['name', 'price', 'provider', 'polygon','id']
 
         # def create(self, validated_data):
         #    # Perform any necessary validations on validated_data
